@@ -10,4 +10,19 @@ class PartBController extends Controller
     {
         return $this->render('RappPageBundle:PartB:page1.html.twig', array());
     }
+
+    public function page2Action()
+    {
+        return $this->render('RappPageBundle:PartB:page2.html.twig', array());
+    }
+
+    public function page3Action()
+    {
+        return $this->render('RappPageBundle:PartB:page3.html.twig', array());
+    }
+
+    public function page4Action()
+    {
+        return $this->render('RappPageBundle:PartB:page4.html.twig', array());
+    }
 }

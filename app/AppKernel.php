@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Rapp\PageBundle\RappPageBundle(),
             new Rapp\ObjectBundle\RappObjectBundle(),
             new Rapp\TemplateBundle\RappTemplateBundle(),
+            new Fkr\CssURLRewriteBundle\FkrCssURLRewriteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

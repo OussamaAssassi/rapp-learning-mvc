@@ -13,3 +13,15 @@ rapp_page_partA_page2:
 rapp_page_partB_page1:
     pattern:  /partB
     defaults: { _controller: RappPageBundle:PartB:page1 }
+
+rapp_page_partB_page2:
+    pattern:  /partB/page2
+    defaults: { _controller: RappPageBundle:PartB:page2 }
+
+rapp_page_partB_page3:
+    pattern:  /partB/page3
+    defaults: { _controller: RappPageBundle:PartB:page3 }
+
+rapp_page_partB_page4:
+    pattern:  /partB/page4
+    defaults: { _controller: RappPageBundle:PartB:page4 }

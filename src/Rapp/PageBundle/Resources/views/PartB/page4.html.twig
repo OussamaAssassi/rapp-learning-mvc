@@ -1,0 +1,25 @@
+{% extends 'RappPageBundle:PartB:layout.html.twig' %}
+
+{% block title %}Mvc learning page 3{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        '@RappPageBundle/Resources/public/css/reset.css'
+        '@RappPageBundle/Resources/public/less/rapp.less'
+        filter='lessphp, ?yui_css'
+        output='css/finalCss.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+ {% block body %}
+    <section>
+        Hello Rapp !
+    </section>
+ {% endblock %}
+
+ {% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/rapppage/js/rapp.js') }}" type="text/javascript"></script>
+{% endblock %}
