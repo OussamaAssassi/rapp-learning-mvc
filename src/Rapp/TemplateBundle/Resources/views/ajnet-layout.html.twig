@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block page_title %}{{site_name}}{% endblock %}</title>
+        <meta name="description" content="{% block page_description %}Development template withe twitter bootstrap{% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block meta_robots %}<meta name="robots" content="noindex,nofollow" />{% endblock %}
+
+        {% block css %}
+            {% if use_cdn == true %}
+                {% include 'AjNetTemplateBundle:Modules:css_cdn.html.twig' with {'theme': bootstrap_theme} %}
+            {% else %}
+                {% include 'AjNetTemplateBundle:Modules:css_local.html.twig' with {'theme': bootstrap_theme} %}
+            {% endif %}
+        {% endblock %}
+
+        {% block favicon %}
+            <link rel="icon" type="image/x-icon" href="{{ asset('bundles/ajnettemplate/favicon.ico') }}" />
+        {% endblock %}
+
+        {# INCLUDE YOUR BUNDLE LESS
+        {{ parent() }}
+        {% stylesheets
+            '@YourBundleName/Resources/public/less/main.less'
+            filter='lessphp, ?yui_css'
+            output='css/YourFinalCssName.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}#}
+
+    </head>
+
+    <body>
+
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    {% block topnav %}
+        {% include 'AjNetTemplateBundle:Modules:topmenu.html.twig' %}
+    {% endblock %}
+
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+
+    {% block javascripts %}
+        {% if use_cdn == true %}
+            {% include 'AjNetTemplateBundle:Modules:js_cdn.html.twig' %}
+        {% else %}
+            {% include 'AjNetTemplateBundle:Modules:js_local.html.twig' %}
+        {% endif %}
+        {# INCLUDE YOUR BUNDLE 
+        {{ parent() }}
+        {% javascripts
+            '@YourBundleName/Resources/public/js/plugins.js'
+            '@YourBundleName/Resources/public/js/main.js'
+            filter='?yui_js'
+            output='js/YourFinalJsName.js'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}#}
+    {% endblock %}
+
+    {% if google_analytic_account != false %}
+        {% include 'AjNetTemplateBundle:Modules:ganalytics.html.twig' %}
+    {% endif %}
+    </body>
+</html>

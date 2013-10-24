@@ -1,0 +1,16 @@
+rapp_template:
+    resource: "@RappTemplateBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+rapp_object:
+    resource: "@RappObjectBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+rapp_page:
+    resource: "@RappPageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+

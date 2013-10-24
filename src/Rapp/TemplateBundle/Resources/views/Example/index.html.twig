@@ -1,0 +1,48 @@
+{% extends 'AjNetTemplateBundle::ajnet-layout.html.twig' %}
+
+{% block page_title %}Example des themes{% endblock %}
+
+{% block css %}
+{% if use_cdn == true %}
+    {% include 'AjNetTemplateBundle:Modules:css_cdn.html.twig' with {'theme': theme_name} %}
+{% else %}
+    {% include 'AjNetTemplateBundle:Modules:css_local.html.twig' with {'theme': theme_name} %}
+{% endif %}   
+{% endblock %}
+
+
+{% block topnav %}
+    {% include 'AjNetTemplateBundle:Example:exampleMenu.html.twig' %}
+{% endblock %}
+
+{% block body %}    
+
+<div class="page-header" id="banner">
+
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>{{ theme_name }}</h1>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="bsa well">
+        <div id="bsap_1277971" class="bsarocks bsap_c466df00a3cd5ee8568b5c4983b6bb19"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+      
+{% include 'AjNetTemplateBundle:Example:navbar.html.twig' %}
+{% include 'AjNetTemplateBundle:Example:buttons.html.twig' %}
+{% include 'AjNetTemplateBundle:Example:typography.html.twig' %}
+{% include 'AjNetTemplateBundle:Example:tables.html.twig' %}   
+{% include 'AjNetTemplateBundle:Example:forms.html.twig' %}  
+{% include 'AjNetTemplateBundle:Example:navs.html.twig' %}
+{% include 'AjNetTemplateBundle:Example:indicators.html.twig' %}
+{% include 'AjNetTemplateBundle:Example:progress_bars.html.twig' %}
+{% include 'AjNetTemplateBundle:Example:containers.html.twig' %}
+{% include 'AjNetTemplateBundle:Example:footers.html.twig' %}
+
+{% endblock %}

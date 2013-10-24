@@ -1,0 +1,58 @@
+{% block form_row %}
+{% spaceless %}
+    <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+        {{ form_label(form) }}
+        <div class="col-lg-10">
+            {{ form_widget(form, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{% block form_label %}
+{% spaceless %}
+    {% if label is not sameas(false) %}
+        {% if not compound %}
+            {% set label_attr = label_attr|merge({'for': id}) %}
+        {% endif %}
+        {% if required %}
+            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required col-lg-2 control-label')|trim}) %}
+        {% endif %}
+        {% if label is empty %}
+            {% set label = name|humanize %}
+        {% endif %}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class="col-lg-2 control-label">{{ label|trans({}, translation_domain) }}{% if required %}
+            <span class="required" title="Ce champ est obligatoire">  *</span>
+        {% endif %}</label>
+    {% endif %}
+{% endspaceless %}
+{% endblock form_label %}
+
+{% block date_widget %}
+{% spaceless %}
+    {% if widget == 'single_text' %}
+        {{ block('form_widget_simple') }}
+    {% else %}
+        <div class="row">
+            {{ date_pattern|replace({
+                '{{ year }}':  '<div class="col-lg-4">' ~ form_widget(form.year, {'attr': {'class': 'form-control form-inline'}}) ~ '</div>',
+                '{{ month }}': '<div class="col-lg-4">' ~ form_widget(form.month, {'attr': {'class': 'form-control form-inline'}}) ~ '</div>',
+                '{{ day }}':   '<div class="col-lg-4">' ~ form_widget(form.day, {'attr': {'class': 'form-control form-inline'}}) ~ '</div>',
+            })|raw }}
+        </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock date_widget %}
+
+{% block form_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+    <span class="help-block">
+        {% for error in errors %}
+            {{ error.message }} 
+        {% endfor %}
+    </span>
+    {% endif %}
+{% endspaceless %}
+{% endblock form_errors %}
