@@ -13,25 +13,16 @@
 
         {% block css %}
             {% if use_cdn == true %}
-                {% include 'AjNetTemplateBundle:Modules:css_cdn.html.twig' with {'theme': bootstrap_theme} %}
+                {% include 'RappTemplateBundle:Modules:css_cdn.html.twig' with {'theme': bootstrap_theme} %}
             {% else %}
-                {% include 'AjNetTemplateBundle:Modules:css_local.html.twig' with {'theme': bootstrap_theme} %}
+                {% include 'RappTemplateBundle:Modules:css_local.html.twig' with {'theme': bootstrap_theme} %}
             {% endif %}
         {% endblock %}
 
         {% block favicon %}
-            <link rel="icon" type="image/x-icon" href="{{ asset('bundles/ajnettemplate/favicon.ico') }}" />
+            <link rel="icon" type="image/x-icon" href="{{ asset('bundles/rapptemplate/favicon.ico') }}" />
         {% endblock %}
 
-        {# INCLUDE YOUR BUNDLE LESS
-        {{ parent() }}
-        {% stylesheets
-            '@YourBundleName/Resources/public/less/main.less'
-            filter='lessphp, ?yui_css'
-            output='css/YourFinalCssName.css'
-        %}
-            <link rel="stylesheet" href="{{ asset_url }}" />
-        {% endstylesheets %}#}
 
     </head>
 
@@ -42,7 +33,7 @@
     <![endif]-->
 
     {% block topnav %}
-        {% include 'AjNetTemplateBundle:Modules:topmenu.html.twig' %}
+        {% include 'RappTemplateBundle:Modules:topmenu.html.twig' %}
     {% endblock %}
 
     <div class="container">
@@ -51,9 +42,9 @@
 
     {% block javascripts %}
         {% if use_cdn == true %}
-            {% include 'AjNetTemplateBundle:Modules:js_cdn.html.twig' %}
+            {% include 'RappTemplateBundle:Modules:js_cdn.html.twig' %}
         {% else %}
-            {% include 'AjNetTemplateBundle:Modules:js_local.html.twig' %}
+            {% include 'RappTemplateBundle:Modules:js_local.html.twig' %}
         {% endif %}
         {# INCLUDE YOUR BUNDLE 
         {{ parent() }}
@@ -68,7 +59,7 @@
     {% endblock %}
 
     {% if google_analytic_account != false %}
-        {% include 'AjNetTemplateBundle:Modules:ganalytics.html.twig' %}
+        {% include 'RappTemplateBundle:Modules:ganalytics.html.twig' %}
     {% endif %}
     </body>
 </html>

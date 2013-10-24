@@ -16,6 +16,6 @@ parameters:
 
     rapp_template_google_analytic_account: false
     rapp_template_use_cdn: false
-    rapp_template_bootstrap_theme: default
-    rapp_template_site_name: nom du site
+    rapp_template_bootstrap_theme: spacelab
+    rapp_template_site_name: learning MVC
     meta_robots: 'noindex,nofollow'

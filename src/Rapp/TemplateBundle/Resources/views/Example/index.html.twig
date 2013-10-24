@@ -1,18 +1,18 @@
-{% extends 'AjNetTemplateBundle::ajnet-layout.html.twig' %}
+{% extends 'RappTemplateBundle::ajnet-layout.html.twig' %}
 
 {% block page_title %}Example des themes{% endblock %}
 
 {% block css %}
 {% if use_cdn == true %}
-    {% include 'AjNetTemplateBundle:Modules:css_cdn.html.twig' with {'theme': theme_name} %}
+    {% include 'RappTemplateBundle:Modules:css_cdn.html.twig' with {'theme': theme_name} %}
 {% else %}
-    {% include 'AjNetTemplateBundle:Modules:css_local.html.twig' with {'theme': theme_name} %}
+    {% include 'RappTemplateBundle:Modules:css_local.html.twig' with {'theme': theme_name} %}
 {% endif %}   
 {% endblock %}
 
 
 {% block topnav %}
-    {% include 'AjNetTemplateBundle:Example:exampleMenu.html.twig' %}
+    {% include 'RappTemplateBundle:Example:exampleMenu.html.twig' %}
 {% endblock %}
 
 {% block body %}    
@@ -34,15 +34,15 @@
 
 </div>
       
-{% include 'AjNetTemplateBundle:Example:navbar.html.twig' %}
-{% include 'AjNetTemplateBundle:Example:buttons.html.twig' %}
-{% include 'AjNetTemplateBundle:Example:typography.html.twig' %}
-{% include 'AjNetTemplateBundle:Example:tables.html.twig' %}   
-{% include 'AjNetTemplateBundle:Example:forms.html.twig' %}  
-{% include 'AjNetTemplateBundle:Example:navs.html.twig' %}
-{% include 'AjNetTemplateBundle:Example:indicators.html.twig' %}
-{% include 'AjNetTemplateBundle:Example:progress_bars.html.twig' %}
-{% include 'AjNetTemplateBundle:Example:containers.html.twig' %}
-{% include 'AjNetTemplateBundle:Example:footers.html.twig' %}
+{% include 'RappTemplateBundle:Example:navbar.html.twig' %}
+{% include 'RappTemplateBundle:Example:buttons.html.twig' %}
+{% include 'RappTemplateBundle:Example:typography.html.twig' %}
+{% include 'RappTemplateBundle:Example:tables.html.twig' %}   
+{% include 'RappTemplateBundle:Example:forms.html.twig' %}  
+{% include 'RappTemplateBundle:Example:navs.html.twig' %}
+{% include 'RappTemplateBundle:Example:indicators.html.twig' %}
+{% include 'RappTemplateBundle:Example:progress_bars.html.twig' %}
+{% include 'RappTemplateBundle:Example:containers.html.twig' %}
+{% include 'RappTemplateBundle:Example:footers.html.twig' %}
 
 {% endblock %}

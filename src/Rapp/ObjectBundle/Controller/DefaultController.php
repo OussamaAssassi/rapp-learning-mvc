@@ -9,11 +9,21 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/{name}",
+     *     name="learning_twig_home",
+     *     defaults={
+     *         "name" = "Rapp",
+     *     }
+     * )
      * @Template()
      */
     public function indexAction($name)
     {
-        return array('name' => $name);
+        $tableau = array('john', 'miles', 'frank');
+
+        return array(
+            'name' => $name,
+            'tableau' => $tableau,
+        );
     }
 }

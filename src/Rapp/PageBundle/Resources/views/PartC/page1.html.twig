@@ -6,12 +6,7 @@
 
 {% block body %}
 <div class="well" style="margin-top: 60px">
-    <h2>Hello {{ name | upper }}!</h2>
-    <ul>
-        {% for data in tableau %}
-            <li><a href="{{ path("learning_twig_home", {"name": data}) }}">{{ data }}</a></li>
-        {% endfor %}
-    </ul>
+    <img src="{{ asset('bundles/rapppage/images/logo_rapp.png') }}"/>
 </div>
 
 {% endblock %}

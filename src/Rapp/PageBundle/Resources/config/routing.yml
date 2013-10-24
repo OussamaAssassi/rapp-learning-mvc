@@ -25,3 +25,7 @@ rapp_page_partB_page3:
 rapp_page_partB_page4:
     pattern:  /partB/page4
     defaults: { _controller: RappPageBundle:PartB:page4 }
+
+rapp_page_partC_page1:
+    pattern:  /partC
+    defaults: { _controller: RappPageBundle:PartC:page1 }
