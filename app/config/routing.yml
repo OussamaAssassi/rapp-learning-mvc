@@ -1,16 +1,16 @@
 rapp_template:
     resource: "@RappTemplateBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /template
 
 rapp_object:
     resource: "@RappObjectBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /twig
 
 rapp_page:
     resource: "@RappPageBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /page
 
 
 
