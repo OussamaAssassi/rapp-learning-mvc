@@ -13,3 +13,9 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    rapp_template_google_analytic_account: false
+    rapp_template_use_cdn: false
+    rapp_template_bootstrap_theme: default
+    rapp_template_site_name: nom du site
+    meta_robots: 'noindex,nofollow'
